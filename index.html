@@ -1,0 +1,2702 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>MILIMARS — DROP 2026 · STREETWEAR</title>
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preconnect" href="https://i.postimg.cc">
+<link rel="preconnect" href="https://imglink.cc">
+
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400&display=swap" rel="stylesheet">
+
+<style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+        --bg: #020202;
+        --deep: #060606;
+        --charcoal: #0a0a0a;
+        --card: #0f0f0f;
+        --border: #1c1c1c;
+        --white: #FFFFFF;
+        --ink: #F0F0F0;
+        --soft: #B0B0B0;
+        --muted: #6a6a6a;
+        --accent: #39FF14;
+        --accent-glow: rgba(57, 255, 20, 0.55);
+        --accent-soft: rgba(57, 255, 20, 0.12);
+        --celeste: #75beff;
+        --danger: #ff4d4d;
+        --radius: 12px;
+        --radius-lg: 18px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+        background: var(--bg);
+        color: var(--ink);
+        font-family: 'DM Sans', sans-serif;
+        -webkit-font-smoothing: antialiased;
+        overflow-x: hidden;
+    }
+
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+
+    /* ═══════════ HERO ═══════════ */
+    .hero {
+        position: relative;
+        padding: clamp(72px, 10vw, 130px) clamp(20px, 5vw, 60px) clamp(56px, 8vw, 96px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        background: radial-gradient(ellipse at 50% 0%, #0b100b 0%, #020202 62%);
+        overflow: hidden;
+    }
+
+    .hero-brand {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    .hero-logo {
+        width: clamp(150px, 24vw, 250px);
+        height: auto;
+        filter: drop-shadow(0 0 55px rgba(57, 255, 20, 0.5)) drop-shadow(0 18px 30px rgba(0,0,0,0.8));
+        animation: logoFloat 6s ease-in-out infinite;
+    }
+    @keyframes logoFloat {
+        0%, 100% { transform: translateY(0); }
+        50%      { transform: translateY(-10px); }
+    }
+
+    .hero-lead {
+        max-width: 62ch;
+        margin: 34px auto 0;
+        color: var(--soft);
+        font-size: clamp(0.88rem, 1.4vw, 1.02rem);
+        line-height: 1.8;
+    }
+
+    .hero-ctas {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 14px;
+        justify-content: center;
+        margin-top: 32px;
+    }
+
+    .btn-primary {
+        font-family: 'Space Mono', monospace;
+        background: var(--accent);
+        color: #000;
+        border: none;
+        padding: 15px 34px;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        font-weight: 700;
+        text-transform: uppercase;
+        border-radius: 40px;
+        transition: 0.22s;
+        display: inline-block;
+        box-shadow: 0 0 26px var(--accent-glow);
+    }
+    .btn-primary:hover {
+        background: #6eff44;
+        transform: translateY(-2px);
+        box-shadow: 0 0 44px var(--accent-glow);
+    }
+
+    .btn-ghost {
+        font-family: 'Space Mono', monospace;
+        background: transparent;
+        border: 1.5px solid rgba(255, 255, 255, 0.25);
+        padding: 15px 34px;
+        font-size: 0.7rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        border-radius: 40px;
+        color: var(--white);
+        transition: 0.22s;
+        display: inline-block;
+    }
+    .btn-ghost:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+        box-shadow: 0 0 20px rgba(57, 255, 20, 0.3);
+        background: rgba(57, 255, 20, 0.05);
+    }
+
+    /* ─── FLOW ─── */
+    .hero-flow {
+        margin-top: clamp(46px, 7vw, 82px);
+        width: 100%;
+        max-width: 1120px;
+    }
+    .flow-eyebrow {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 14px;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 3px;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+    .flow-eyebrow::before,
+    .flow-eyebrow::after {
+        content: "";
+        height: 1px;
+        width: clamp(24px, 6vw, 64px);
+        background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.18));
+    }
+    .flow-eyebrow::after {
+        background: linear-gradient(90deg, rgba(255, 255, 255, 0.18), transparent);
+    }
+
+    .flow-grid {
+        display: grid;
+        grid-template-columns: 1fr auto 1fr auto 1fr auto 1fr;
+        gap: clamp(8px, 1.4vw, 16px);
+        align-items: start;
+        margin-top: 26px;
+        text-align: left;
+    }
+
+    .flow-step { min-width: 0; }
+    .flow-head {
+        display: flex;
+        align-items: baseline;
+        gap: 8px;
+        margin-bottom: 10px;
+    }
+    .flow-num {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.05rem;
+        letter-spacing: 1px;
+        color: var(--accent);
+        text-shadow: 0 0 14px rgba(57, 255, 20, 0.4);
+    }
+    .flow-label {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+    .flow-media {
+        aspect-ratio: 4 / 5;
+        overflow: hidden;
+        border-radius: var(--radius);
+        border: 1px solid var(--border);
+        background: var(--card);
+    }
+    .flow-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .flow-step:hover .flow-media img { transform: scale(1.05); }
+    .flow-desc {
+        margin-top: 10px;
+        font-size: 0.68rem;
+        line-height: 1.55;
+        color: var(--muted);
+    }
+
+    .flow-connector {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 6px;
+        padding-top: 42px;
+    }
+    .flow-connector span {
+        width: 5px;
+        height: 5px;
+        border-radius: 50%;
+        background: var(--accent);
+        opacity: 0.25;
+        animation: dotPulse 1.6s ease-in-out infinite;
+    }
+    .flow-connector span:nth-child(2) { animation-delay: 0.2s; }
+    .flow-connector span:nth-child(3) { animation-delay: 0.4s; }
+    @keyframes dotPulse {
+        0%, 100% { opacity: 0.2; transform: scale(0.8); }
+        50%      { opacity: 1;   transform: scale(1.25); }
+    }
+
+    .flow-step-placeholder {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        aspect-ratio: 4 / 5;
+        margin-top: 34px;
+        padding: 14px;
+        border: 1.5px dashed rgba(57, 255, 20, 0.35);
+        border-radius: var(--radius);
+        color: var(--accent);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        text-align: center;
+        line-height: 1.6;
+        transition: 0.25s;
+    }
+    .flow-step-placeholder:hover {
+        background: rgba(57, 255, 20, 0.06);
+        border-color: var(--accent);
+        box-shadow: 0 0 30px rgba(57, 255, 20, 0.18);
+    }
+    .flow-step-placeholder svg {
+        width: 26px;
+        height: 26px;
+        fill: currentColor;
+        filter: drop-shadow(0 0 10px var(--accent-glow));
+    }
+
+    /* ═══════════ MARQUEE ═══════════ */
+    .marquee {
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(180deg, #060606 0%, #040404 100%);
+        border-top: 1px solid rgba(57, 255, 20, 0.22);
+        border-bottom: 1px solid rgba(57, 255, 20, 0.22);
+        padding: 26px 0;
+        -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+        mask-image: linear-gradient(90deg, transparent 0, #000 5%, #000 95%, transparent 100%);
+    }
+    .marquee-track {
+        display: flex;
+        width: max-content;
+        animation: marqueeScroll 52s linear infinite;
+        will-change: transform;
+    }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @keyframes marqueeScroll {
+        from { transform: translate3d(0, 0, 0); }
+        to   { transform: translate3d(-50%, 0, 0); }
+    }
+    .marquee-content {
+        display: flex;
+        flex-shrink: 0;
+        gap: 72px;
+        padding-right: 72px;
+    }
+    .marquee-content span {
+        display: flex;
+        align-items: center;
+        gap: 72px;
+        white-space: nowrap;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        font-size: clamp(0.95rem, 1.6vw, 1.25rem);
+        letter-spacing: 6px;
+        text-transform: uppercase;
+        color: var(--white);
+        text-shadow: 0 0 28px rgba(255, 255, 255, 0.08);
+    }
+    .marquee-content span::after {
+        content: "✦";
+        color: var(--accent);
+        font-size: 0.75rem;
+        text-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    /* ═══════════ SECTION HEADS ═══════════ */
+    .section-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-end;
+        gap: 24px;
+        flex-wrap: wrap;
+        margin-bottom: clamp(26px, 4vw, 46px);
+    }
+    .eyebrow {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 4px;
+        text-transform: uppercase;
+        color: var(--accent);
+        margin-bottom: 12px;
+    }
+    .section-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: clamp(2.2rem, 5vw, 3.6rem);
+        line-height: 0.9;
+        letter-spacing: 1.5px;
+        color: var(--white);
+    }
+    .section-title em {
+        font-family: 'Space Mono', monospace;
+        font-style: italic;
+        font-size: 0.42em;
+        letter-spacing: 1px;
+        color: var(--accent);
+        text-shadow: 0 0 22px var(--accent-glow);
+        display: inline-block;
+        margin-left: 8px;
+        vertical-align: middle;
+    }
+    .section-desc {
+        font-size: 0.75rem;
+        line-height: 1.65;
+        color: var(--muted);
+        max-width: 40ch;
+        text-align: right;
+    }
+
+    /* ═══════════ GALERÍA ═══════════ */
+    #trabajos {
+        padding: clamp(58px, 8vw, 100px) clamp(20px, 4vw, 60px);
+        background: var(--charcoal);
+        border-top: 1px solid var(--border);
+    }
+    .works-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+        gap: clamp(12px, 1.8vw, 20px);
+    }
+    .work-card {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+        cursor: pointer;
+        transition: transform 0.35s cubic-bezier(0.2, 0.9, 0.4, 1), border-color 0.3s, box-shadow 0.3s;
+    }
+    .work-card:hover {
+        transform: translateY(-6px);
+        border-color: rgba(57, 255, 20, 0.4);
+        box-shadow: 0 22px 44px rgba(0, 0, 0, 0.72), 0 0 0 1px rgba(57, 255, 20, 0.2);
+    }
+    .work-card:focus-visible {
+        outline: 2px solid var(--accent);
+        outline-offset: 3px;
+    }
+    .work-media {
+        position: relative;
+        aspect-ratio: 1 / 1;
+        overflow: hidden;
+        background: #0d0d0d;
+    }
+    .work-media img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.5s ease;
+    }
+    .work-card:hover .work-media img { transform: scale(1.05); }
+    .work-media.img-error::after {
+        content: "SIN IMAGEN";
+        position: absolute;
+        inset: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        color: var(--muted);
+    }
+    .work-tag {
+        position: absolute;
+        top: 12px;
+        left: 12px;
+        background: var(--accent);
+        color: #000;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.5rem;
+        font-weight: 700;
+        letter-spacing: 1.5px;
+        padding: 5px 12px;
+        border-radius: 40px;
+        box-shadow: 0 0 16px var(--accent-glow);
+        z-index: 2;
+    }
+    .work-body { padding: 14px 16px 18px; }
+    .work-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1;
+        letter-spacing: 1px;
+        margin-bottom: 6px;
+    }
+    .work-desc {
+        font-size: 0.68rem;
+        line-height: 1.55;
+        color: var(--muted);
+    }
+
+    /* ─── SELECTOR DE TALLE ─── */
+    .size-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 12px 0 4px;
+    }
+    .size-btn {
+        font-family: 'Space Mono', monospace;
+        background: transparent;
+        border: 1px solid rgba(255, 255, 255, 0.15);
+        color: var(--soft);
+        font-size: 0.55rem;
+        font-weight: 600;
+        padding: 5px 10px;
+        border-radius: 40px;
+        cursor: pointer;
+        transition: all 0.2s;
+    }
+    .size-btn:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    .size-btn.active {
+        background: var(--accent);
+        border-color: var(--accent);
+        color: #000;
+        box-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    .work-price {
+        margin-top: 12px;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5rem;
+        line-height: 1;
+        letter-spacing: 1px;
+        color: var(--accent);
+        text-shadow: 0 0 20px rgba(57, 255, 20, 0.28);
+    }
+    .work-price span {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.5rem;
+        letter-spacing: 2px;
+        color: var(--muted);
+        margin-left: 8px;
+        vertical-align: middle;
+    }
+    .works-empty {
+        grid-column: 1 / -1;
+        padding: 46px 20px;
+        text-align: center;
+        border: 1.5px dashed rgba(57, 255, 20, 0.25);
+        border-radius: var(--radius-lg);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+
+    /* ═══════════ CÓMO PEDIR ═══════════ */
+    #pedido {
+        padding: clamp(58px, 8vw, 100px) clamp(20px, 4vw, 60px);
+        background: var(--deep);
+        border-top: 1px solid var(--border);
+        border-bottom: 1px solid var(--border);
+    }
+    .steps {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: clamp(14px, 2.4vw, 26px);
+    }
+    .step {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        padding: 24px 22px;
+        transition: border-color 0.25s, transform 0.25s;
+    }
+    .step:hover {
+        border-color: rgba(57, 255, 20, 0.3);
+        transform: translateY(-3px);
+    }
+    .step-num {
+        display: block;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 2.6rem;
+        line-height: 1;
+        color: var(--accent);
+        margin-bottom: 12px;
+        text-shadow: 0 0 20px rgba(57, 255, 20, 0.35);
+    }
+    .step h3 {
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.9rem;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        margin-bottom: 8px;
+        color: var(--white);
+    }
+    .step p {
+        font-size: 0.76rem;
+        line-height: 1.65;
+        color: var(--muted);
+    }
+    .step-note {
+        margin-top: 26px;
+        display: flex;
+        flex-wrap: wrap;
+        align-items: baseline;
+        gap: 10px;
+        padding: 16px 20px;
+        border-radius: var(--radius);
+        background: rgba(57, 255, 20, 0.06);
+        border: 1px solid rgba(57, 255, 20, 0.25);
+        font-size: 0.75rem;
+        color: var(--soft);
+    }
+    .step-note strong {
+        font-family: 'Space Mono', monospace;
+        font-style: italic;
+        font-size: 0.7rem;
+        letter-spacing: 1px;
+        color: var(--accent);
+        text-shadow: 0 0 14px var(--accent-glow);
+    }
+
+    /* ═══════════ TALLES ═══════════ */
+    #talles {
+        padding: clamp(58px, 8vw, 100px) clamp(20px, 4vw, 60px);
+        background: var(--charcoal);
+    }
+    .size-table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--border);
+        border-radius: var(--radius-lg);
+        background: var(--card);
+    }
+    .size-table-wrap table {
+        width: 100%;
+        min-width: 420px;
+        border-collapse: collapse;
+        font-size: 0.75rem;
+    }
+    .size-table-wrap th {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        background: #141414;
+        text-align: left;
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+        white-space: nowrap;
+    }
+    .size-table-wrap td {
+        padding: 14px 18px;
+        border-bottom: 1px solid var(--border);
+        color: var(--soft);
+    }
+    .size-table-wrap td:first-child {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        color: var(--accent);
+    }
+    .size-table-wrap tr:last-child td { border-bottom: none; }
+    .size-note {
+        margin-top: 14px;
+        font-size: 0.65rem;
+        line-height: 1.6;
+        color: var(--muted);
+    }
+
+    /* ═══════════ FOOTER ═══════════ */
+    .site-footer {
+        background: #020202;
+        border-top: 1px solid var(--border);
+        padding: 22px clamp(20px, 4vw, 40px);
+    }
+    .footer-inner {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+    .footer-left {
+        display: flex;
+        align-items: center;
+        gap: 14px;
+        flex-wrap: wrap;
+    }
+
+    /* ─── ADMIN TRIGGER: solo el puntito verde ─── */
+    .admin-trigger {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        padding: 10px;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    .admin-dot {
+        width: 11px;
+        height: 11px;
+        border-radius: 50%;
+        background: var(--accent);
+        box-shadow: 0 0 14px var(--accent-glow);
+        animation: dotPulse 1.8s ease-in-out infinite;
+        transition: transform 0.2s;
+    }
+    .admin-trigger:hover .admin-dot {
+        transform: scale(1.25);
+        box-shadow: 0 0 22px var(--accent-glow);
+    }
+
+    /* ═══════════ FLOATING SOCIAL ═══════════ */
+    .floating-social {
+        position: fixed;
+        right: 24px;
+        bottom: 24px;
+        z-index: 250;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+    }
+    .social-icon {
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(0, 0, 0, 0.72);
+        backdrop-filter: blur(12px);
+        -webkit-backdrop-filter: blur(12px);
+        border: 1.5px solid rgba(57, 255, 20, 0.35);
+        color: var(--accent);
+        box-shadow: 0 0 18px rgba(57, 255, 20, 0.22);
+        transition: 0.22s;
+    }
+    .social-icon svg {
+        width: 22px;
+        height: 22px;
+        fill: currentColor;
+        filter: drop-shadow(0 0 8px var(--accent-glow));
+    }
+    .social-icon:hover {
+        background: rgba(57, 255, 20, 0.16);
+        border-color: var(--accent);
+        box-shadow: 0 0 30px var(--accent-glow);
+        transform: scale(1.06);
+    }
+
+    /* ═══════════ OVERLAYS ═══════════ */
+    #lightbox,
+    #adminOverlay,
+    #confirmOverlay {
+        position: fixed;
+        inset: 0;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        z-index: 400;
+        background: rgba(0, 0, 0, 0.86);
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+    #lightbox.open,
+    #adminOverlay.open,
+    #confirmOverlay.open { display: flex; }
+
+    /* ─── LIGHTBOX ─── */
+    .lightbox-inner {
+        position: relative;
+        width: 100%;
+        max-width: 820px;
+        max-height: 90dvh;
+        display: flex;
+        flex-direction: column;
+        background: #0b0b0b;
+        border: 1px solid rgba(57, 255, 20, 0.25);
+        border-radius: var(--radius-lg);
+        overflow: hidden;
+    }
+    .lightbox-close {
+        position: absolute;
+        top: 10px;
+        right: 12px;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        background: rgba(0, 0, 0, 0.65);
+        border: 1px solid var(--border);
+        color: var(--white);
+        font-size: 1rem;
+        line-height: 1;
+        z-index: 3;
+        transition: 0.2s;
+    }
+    .lightbox-close:hover {
+        border-color: var(--accent);
+        color: var(--accent);
+    }
+    .lightbox-top {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        flex-wrap: wrap;
+        padding: 16px 56px 16px 18px;
+        border-bottom: 1px solid var(--border);
+    }
+    .lightbox-top .work-tag {
+        position: static;
+        box-shadow: none;
+    }
+    #lbTitle {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.6rem;
+        line-height: 1;
+        letter-spacing: 1px;
+        color: var(--white);
+    }
+    .lightbox-img {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 14px;
+        background: #050505;
+    }
+    .lightbox-img img {
+        max-width: 100%;
+        max-height: 58dvh;
+        object-fit: contain;
+    }
+    .lightbox-bottom {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        padding: 16px 18px;
+        border-top: 1px solid var(--border);
+    }
+    #lbPrice {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.6rem;
+        line-height: 1;
+        letter-spacing: 1px;
+        color: var(--accent);
+        text-shadow: 0 0 20px rgba(57, 255, 20, 0.28);
+    }
+    #lbSize {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--soft);
+    }
+    #lbDesc {
+        font-size: 0.75rem;
+        line-height: 1.65;
+        color: var(--soft);
+    }
+    .lb-wa-btn {
+        align-self: flex-start;
+        background: var(--accent);
+        color: #000;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.62rem;
+        font-weight: 700;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 12px 26px;
+        border-radius: 40px;
+        box-shadow: 0 0 22px rgba(57, 255, 20, 0.4);
+        transition: 0.2s;
+    }
+    .lb-wa-btn:hover {
+        background: #6eff44;
+        box-shadow: 0 0 36px var(--accent-glow);
+    }
+
+    /* ─── ADMIN: LOGIN ─── */
+    .login-card {
+        width: 100%;
+        max-width: 380px;
+        padding: 26px 24px;
+        background: #0b0b0b;
+        border: 1px solid rgba(57, 255, 20, 0.25);
+        border-radius: var(--radius-lg);
+    }
+    .login-card h3 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.7rem;
+        letter-spacing: 1.5px;
+        line-height: 1;
+        margin-bottom: 6px;
+    }
+    .login-card p {
+        font-size: 0.72rem;
+        color: var(--muted);
+        margin-bottom: 16px;
+    }
+    .login-error {
+        display: none;
+        margin-bottom: 12px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 1px;
+    }
+    .login-error.show { display: block; }
+    .login-error.error {
+        background: rgba(255, 77, 77, 0.1);
+        border: 1px solid rgba(255, 77, 77, 0.4);
+        color: #ff8a8a;
+    }
+    .login-error.info {
+        background: var(--accent-soft);
+        border: 1px solid rgba(57, 255, 20, 0.35);
+        color: var(--accent);
+    }
+
+    .field {
+        display: flex;
+        flex-direction: column;
+        gap: 6px;
+        margin-bottom: 14px;
+    }
+    .field label {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+    }
+    .field input[type="text"],
+    .field input[type="password"] {
+        background: #111;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 11px 14px;
+        color: var(--white);
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.8rem;
+        outline: none;
+        transition: 0.2s;
+        width: 100%;
+    }
+    .field input[type="text"]:focus,
+    .field input[type="password"]:focus {
+        border-color: rgba(57, 255, 20, 0.6);
+        box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.12);
+    }
+
+    .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 6px;
+    }
+    .btn-save {
+        background: var(--accent);
+        color: #000;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 11px 22px;
+        border-radius: 40px;
+        transition: 0.2s;
+    }
+    .btn-save:hover { background: #6eff44; box-shadow: 0 0 26px var(--accent-glow); }
+    .btn-cancel {
+        border: 1px solid var(--border);
+        color: var(--soft);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 11px 22px;
+        border-radius: 40px;
+        transition: 0.2s;
+    }
+    .btn-cancel:hover {
+        border-color: rgba(57, 255, 20, 0.45);
+        color: var(--accent);
+    }
+
+    /* ─── ADMIN: PANEL ─── */
+    .admin-panel {
+        width: 100%;
+        max-width: 1040px;
+        max-height: 90dvh;
+        overflow-y: auto;
+        padding: 24px;
+        background: #0b0b0b;
+        border: 1px solid rgba(57, 255, 20, 0.25);
+        border-radius: var(--radius-lg);
+    }
+    .admin-head {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        gap: 16px;
+        flex-wrap: wrap;
+        margin-bottom: 14px;
+    }
+    .admin-head h3 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.7rem;
+        line-height: 1;
+        letter-spacing: 1.5px;
+    }
+    .admin-head small {
+        font-size: 0.65rem;
+        color: var(--muted);
+    }
+    .admin-head-actions {
+        display: flex;
+        gap: 8px;
+        flex-wrap: wrap;
+    }
+
+    .admin-status {
+        display: none;
+        margin-bottom: 14px;
+        padding: 8px 12px;
+        border-radius: 8px;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 1px;
+    }
+    .admin-status.show { display: block; }
+    .admin-status.success {
+        background: var(--accent-soft);
+        border: 1px solid rgba(57, 255, 20, 0.35);
+        color: var(--accent);
+    }
+    .admin-status.error {
+        background: rgba(255, 77, 77, 0.1);
+        border: 1px solid rgba(255, 77, 77, 0.4);
+        color: #ff8a8a;
+    }
+    .admin-status.info {
+        background: rgba(255, 255, 255, 0.05);
+        border: 1px solid var(--border);
+        color: var(--soft);
+    }
+
+    .admin-grid {
+        display: grid;
+        grid-template-columns: 360px 1fr;
+        gap: 20px;
+        align-items: start;
+    }
+    .admin-form-card {
+        padding: 18px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+    }
+    .admin-form-card h4 {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.3rem;
+        letter-spacing: 1px;
+        line-height: 1;
+        margin-bottom: 14px;
+    }
+
+    /* ─── precio global ─── */
+    .admin-price-box {
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+    }
+    .admin-price-box > label {
+        display: block;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 8px;
+    }
+    .admin-price-row {
+        display: flex;
+        gap: 8px;
+    }
+    .admin-price-row input {
+        flex: 1;
+        min-width: 0;
+        background: #111;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 10px 12px;
+        color: var(--white);
+        font-family: 'DM Sans', sans-serif;
+        font-size: 0.85rem;
+        outline: none;
+    }
+    .admin-price-row input:focus {
+        border-color: rgba(57, 255, 20, 0.6);
+        box-shadow: 0 0 0 3px rgba(57, 255, 20, 0.12);
+    }
+    .admin-price-row .btn-save { padding: 10px 18px; }
+
+    /* ─── flow images editor ─── */
+    .admin-flow-box {
+        margin-bottom: 18px;
+        padding-bottom: 16px;
+        border-bottom: 1px solid var(--border);
+    }
+    .admin-flow-box > label {
+        display: block;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-bottom: 10px;
+    }
+    .admin-flow-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 8px;
+    }
+    .admin-flow-slot {
+        display: flex;
+        flex-direction: column;
+        cursor: pointer;
+    }
+    .admin-flow-thumb {
+        aspect-ratio: 1 / 1;
+        border-radius: 8px;
+        overflow: hidden;
+        border: 1px dashed rgba(57, 255, 20, 0.35);
+        background: #111;
+        transition: 0.2s;
+    }
+    .admin-flow-slot:hover .admin-flow-thumb {
+        border-color: var(--accent);
+        background: rgba(57, 255, 20, 0.04);
+    }
+    .admin-flow-thumb img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    .admin-flow-label {
+        text-align: center;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.48rem;
+        letter-spacing: 1.5px;
+        text-transform: uppercase;
+        color: var(--muted);
+        margin-top: 6px;
+    }
+
+    .upload-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 14px;
+        border: 1.5px dashed rgba(57, 255, 20, 0.35);
+        border-radius: 10px;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.58rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        color: var(--accent);
+        cursor: pointer;
+        text-align: center;
+        transition: 0.2s;
+    }
+    .upload-btn:hover { background: rgba(57, 255, 20, 0.06); }
+    .upload-btn.has-image {
+        border-style: solid;
+        background: rgba(57, 255, 20, 0.07);
+    }
+    .upload-btn svg {
+        width: 16px;
+        height: 16px;
+        fill: currentColor;
+        flex-shrink: 0;
+    }
+    #wFileStatus {
+        display: block;
+        margin-top: 6px;
+        font-size: 0.58rem;
+        line-height: 1.5;
+        color: var(--muted);
+    }
+    .preview {
+        display: none;
+        margin-top: 10px;
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        overflow: hidden;
+    }
+    .preview img { width: 100%; height: auto; }
+
+    .admin-list {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+    .admin-item {
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        padding: 10px;
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: var(--radius);
+    }
+    .admin-thumb {
+        width: 54px;
+        height: 54px;
+        flex-shrink: 0;
+        border-radius: 8px;
+        overflow: hidden;
+        background: #111;
+    }
+    .admin-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .admin-item-info {
+        flex: 1;
+        min-width: 0;
+        font-size: 0.72rem;
+    }
+    .admin-item-info strong {
+        display: block;
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.1rem;
+        letter-spacing: 0.5px;
+        line-height: 1.1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+    }
+    .admin-item-info span {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.5rem;
+        letter-spacing: 1px;
+        color: var(--accent);
+    }
+    .admin-item-actions {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        flex-wrap: wrap;
+    }
+    .admin-item-actions button {
+        width: 28px;
+        height: 28px;
+        border-radius: 8px;
+        background: #161616;
+        border: 1px solid var(--border);
+        color: var(--soft);
+        font-size: 0.65rem;
+        transition: 0.18s;
+    }
+    .admin-item-actions button:hover:not(:disabled) {
+        border-color: rgba(57, 255, 20, 0.5);
+        color: var(--accent);
+    }
+    .admin-item-actions button:disabled {
+        opacity: 0.28;
+        cursor: not-allowed;
+    }
+    .admin-item-actions .btn-edit {
+        width: auto;
+        padding: 0 10px;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.55rem;
+        letter-spacing: 1px;
+    }
+    .admin-item-actions .btn-del:hover {
+        color: #ff8a8a;
+        border-color: rgba(255, 77, 77, 0.55);
+    }
+    .admin-empty {
+        padding: 22px;
+        text-align: center;
+        border: 1px dashed var(--border);
+        border-radius: var(--radius);
+        font-family: 'Space Mono', monospace;
+        font-size: 0.62rem;
+        letter-spacing: 1px;
+        color: var(--muted);
+    }
+
+    /* ─── CONFIRM ─── */
+    .confirm-card {
+        width: 100%;
+        max-width: 400px;
+        padding: 28px 24px;
+        text-align: center;
+        background: #0b0b0b;
+        border: 1px solid rgba(57, 255, 20, 0.25);
+        border-radius: var(--radius-lg);
+    }
+    .confirm-icon {
+        width: 52px;
+        height: 52px;
+        margin: 0 auto 14px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        background: rgba(255, 77, 77, 0.1);
+        border: 1px solid rgba(255, 77, 77, 0.35);
+        color: #ff8a8a;
+    }
+    .confirm-icon svg { width: 22px; height: 22px; fill: currentColor; }
+    .confirm-title {
+        font-family: 'Bebas Neue', sans-serif;
+        font-size: 1.5rem;
+        letter-spacing: 1px;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+    .confirm-message {
+        font-size: 0.78rem;
+        line-height: 1.65;
+        color: var(--soft);
+        margin-bottom: 20px;
+    }
+    .confirm-actions {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    .confirm-btn {
+        font-family: 'Space Mono', monospace;
+        font-size: 0.6rem;
+        letter-spacing: 2px;
+        text-transform: uppercase;
+        padding: 11px 22px;
+        border-radius: 40px;
+        transition: 0.2s;
+    }
+    .confirm-btn-cancel {
+        border: 1px solid var(--border);
+        color: var(--soft);
+    }
+    .confirm-btn-cancel:hover {
+        border-color: rgba(57, 255, 20, 0.45);
+        color: var(--accent);
+    }
+    .confirm-btn-danger {
+        background: var(--danger);
+        color: #1a0000;
+        font-weight: 700;
+    }
+    .confirm-btn-danger:hover { background: #ff6b6b; }
+
+    /* ═══════════ REVEAL ═══════════ */
+    .reveal {
+        opacity: 0;
+        transform: translateY(26px);
+        transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.in {
+        opacity: 1;
+        transform: translateY(0);
+    }
+    @media (prefers-reduced-motion: reduce) {
+        .reveal { opacity: 1; transform: none; transition: none; }
+        .marquee-track { animation: none; }
+        .flow-connector span, .admin-dot, .hero-logo { animation: none; }
+    }
+
+    /* ═══════════ RESPONSIVE ═══════════ */
+    @media (max-width: 900px) {
+        .flow-step-placeholder,
+        .flow-grid > .flow-connector:nth-last-child(2) { display: none; }
+        .flow-grid { grid-template-columns: 1fr auto 1fr auto 1fr; }
+    }
+    @media (max-width: 780px) {
+        .admin-grid { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 720px) {
+        .flow-grid {
+            grid-template-columns: 1fr;
+            max-width: 300px;
+            margin-left: auto;
+            margin-right: auto;
+            gap: 18px;
+        }
+        .flow-connector { display: none; }
+        .hero-flow { max-width: 300px; margin-left: auto; margin-right: auto; }
+        .section-desc { text-align: left; }
+    }
+    @media (max-width: 640px) {
+        .footer-inner {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+        .site-footer { padding-bottom: 100px; }
+        .floating-social { right: 14px; bottom: 14px; gap: 10px; }
+        .social-icon { width: 40px; height: 40px; }
+        .social-icon svg { width: 20px; height: 20px; }
+        .lightbox-img img { max-height: 46dvh; }
+        .lightbox-top { padding: 14px 52px 14px 14px; }
+        .lightbox-bottom { padding: 14px; }
+        .marquee { padding: 20px 0; }
+        .marquee-content { gap: 48px; padding-right: 48px; }
+        .marquee-content span { gap: 48px; letter-spacing: 4px; }
+    }
+    @media (max-width: 560px) {
+        .admin-head { flex-direction: column; align-items: stretch; }
+        .admin-head-actions { width: 100%; }
+        .admin-head-actions button { flex: 1; }
+        .admin-item { flex-wrap: wrap; }
+        .admin-item-actions {
+            width: 100%;
+            justify-content: flex-start;
+            border-top: 1px solid var(--border);
+            padding-top: 10px;
+            margin-top: 2px;
+        }
+        .form-actions { flex-direction: column; }
+        .form-actions button { width: 100%; }
+        .upload-btn { padding: 12px; font-size: 0.55rem; }
+        #wFileStatus { font-size: 0.55rem; }
+    }
+    @media (max-width: 400px) {
+        .admin-panel { padding: 16px; }
+        .admin-form-card { padding: 14px; }
+        .admin-thumb { width: 44px; height: 44px; }
+    }
+</style>
+</head>
+<body>
+
+    <!-- ═══════════ HERO ═══════════ -->
+    <section class="hero">
+        <div class="hero-brand">
+            <img class="hero-logo" src="https://i.postimg.cc/vTN03832/Lower-Res.png" alt="MILIMARS" width="250" height="250" loading="eager" decoding="async">
+        </div>
+
+        <p class="hero-lead">
+            Remeras de tirada corta y cortes amplios, producidas en Venado Tuerto en series
+            chicas: cuando un talle se agota, no vuelve. Cada pedido se coordina uno a uno
+            por WhatsApp.
+        </p>
+
+        <div class="hero-ctas">
+            <a href="#trabajos" class="btn-primary">Ver colección</a>
+            <a href="#pedido" class="btn-ghost">Cómo comprar</a>
+        </div>
+
+        <div class="hero-flow">
+            <p class="flow-eyebrow">Del concepto a la prenda</p>
+
+            <div class="flow-grid">
+                <div class="flow-step">
+                    <div class="flow-head">
+                        <span class="flow-num">01</span>
+                        <span class="flow-label">Boceto</span>
+                    </div>
+                    <div class="flow-media">
+                        <img id="flowImg1" src="https://imglink.cc/cdn/UoliTM1FCv.png" alt="Boceto del drop" loading="lazy" decoding="async">
+                    </div>
+                    <p class="flow-desc">Definimos la idea, el mensaje y la paleta de cada drop.</p>
+                </div>
+
+                <div class="flow-connector"><span></span><span></span><span></span></div>
+
+                <div class="flow-step">
+                    <div class="flow-head">
+                        <span class="flow-num">02</span>
+                        <span class="flow-label">Moldería</span>
+                    </div>
+                    <div class="flow-media">
+                        <img id="flowImg2" src="https://imglink.cc/i/rXOlcOR-P6" alt="Prueba de moldería" loading="lazy" decoding="async">
+                    </div>
+                    <p class="flow-desc">Probamos calce y medidas sobre cuerpos reales.</p>
+                </div>
+
+                <div class="flow-connector"><span></span><span></span><span></span></div>
+
+                <div class="flow-step">
+                    <div class="flow-head">
+                        <span class="flow-num">03</span>
+                        <span class="flow-label">Estampa</span>
+                    </div>
+                    <div class="flow-media">
+                        <img id="flowImg3" src="https://imglink.cc/cdn/3w21rP1wWE.png" alt="Estampado" loading="lazy" decoding="async">
+                    </div>
+                    <p class="flow-desc">Serigrafía y vinilo sobre algodón de peso medio.</p>
+                </div>
+
+                <div class="flow-connector"><span></span><span></span><span></span></div>
+
+                <a class="flow-step flow-step-placeholder"
+                   href="https://wa.me/543462415932?text=Hola%20MILIMARS%2C%20quiero%20arrancar%20mi%20pedido."
+                   target="_blank" rel="noopener noreferrer"
+                   aria-label="Empezá tu pedido">
+                    <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5h2v6h6v2h-6v6h-2v-6H5v-2h6V5z"/></svg>
+                    <span>Empezá tu pedido</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ═══════════ MARQUEE ═══════════ -->
+    <div class="marquee" aria-hidden="true">
+        <div class="marquee-track">
+            <div class="marquee-content">
+                <span>Drop 2026</span>
+                <span>Stock limitado</span>
+                <span>Algodón premium</span>
+                <span>Gráfica exclusiva</span>
+                <span>Venado Tuerto · Santa Fe</span>
+                <span>Envíos a todo el país</span>
+                <span>Tirada corta</span>
+            </div>
+            <div class="marquee-content">
+                <span>Drop 2026</span>
+                <span>Stock limitado</span>
+                <span>Algodón premium</span>
+                <span>Gráfica exclusiva</span>
+                <span>Venado Tuerto · Santa Fe</span>
+                <span>Envíos a todo el país</span>
+                <span>Tirada corta</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ GALERÍA ═══════════ -->
+    <section id="trabajos">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">// Catálogo</p>
+                <h2 class="section-title">DROP <em>2026</em></h2>
+            </div>
+            <p class="section-desc">
+                Piezas activas del drop. Elegí talle y tocá una para ver el detalle.
+            </p>
+        </div>
+
+        <div class="works-grid" id="worksGrid"></div>
+    </section>
+
+    <!-- ═══════════ CÓMO PEDIR ═══════════ -->
+    <section id="pedido">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">// Pedido</p>
+                <h2 class="section-title">ASÍ SE COMPRA <em>simple</em></h2>
+            </div>
+            <p class="section-desc">
+                Sin carritos eternos ni registros. Elegís, escribís y coordinamos por chat.
+            </p>
+        </div>
+
+        <div class="steps reveal">
+            <div class="step">
+                <span class="step-num">01</span>
+                <h3>Elegí tu diseño</h3>
+                <p>Abrí la ficha de la pieza que te gusta y revisá el detalle antes de escribirnos.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">02</span>
+                <h3>Escribinos</h3>
+                <p>El botón de WhatsApp abre el chat con el pedido ya redactado. Confirmamos talle y stock.</p>
+            </div>
+            <div class="step">
+                <span class="step-num">03</span>
+                <h3>Coordinamos</h3>
+                <p>Pago por transferencia o efectivo, envío a todo el país o retiro en Venado Tuerto.</p>
+            </div>
+        </div>
+
+        <div class="step-note reveal">
+            <strong>Tip</strong>
+            <span>Si dudás entre dos talles, mandanos tus medidas y te ayudamos a elegir antes de confirmar.</span>
+        </div>
+    </section>
+
+    <!-- ═══════════ TALLES ═══════════ -->
+    <section id="talles">
+        <div class="section-head reveal">
+            <div>
+                <p class="eyebrow">// Medidas</p>
+                <h2 class="section-title">TABLA DE TALLES <em>cm</em></h2>
+            </div>
+            <p class="section-desc">
+                Prendas medidas apoyadas sobre la mesa, sin estirar.
+            </p>
+        </div>
+
+        <div class="size-table-wrap reveal">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Talle</th>
+                        <th>Ancho</th>
+                        <th>Largo</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr><td>XS</td><td>46 cm</td><td>68 cm</td></tr>
+                    <tr><td>S</td><td>48 cm</td><td>70 cm</td></tr>
+                    <tr><td>M</td><td>51 cm</td><td>72 cm</td></tr>
+                    <tr><td>L</td><td>54 cm</td><td>74 cm</td></tr>
+                    <tr><td>XL</td><td>57 cm</td><td>76 cm</td></tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p class="size-note reveal">
+            Tolerancia de ±1,5 cm. El calce es relajado: si buscás algo más ajustado, bajá un talle.
+        </p>
+    </section>
+
+    <!-- ═══════════ FOOTER ═══════════ -->
+    <footer class="site-footer">
+        <div class="footer-inner">
+            <div class="footer-left">
+                <span>© <span id="year">2026</span> MILIMARS · Venado Tuerto · Santa Fe</span>
+                <button type="button" class="admin-trigger" id="adminTrigger" aria-label="Abrir panel de administración" title="Panel">
+                    <span class="admin-dot"></span>
+                </button>
+            </div>
+            <span>Drop 2026 · Streetwear</span>
+        </div>
+    </footer>
+
+    <!-- ═══════════ FLOATING SOCIAL ═══════════ -->
+    <div class="floating-social">
+        <a class="social-icon wa" href="https://wa.me/543462415932" target="_blank" rel="noopener noreferrer" aria-label="Chatear por WhatsApp" title="WhatsApp">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 0 1-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 0 1-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 0 1 2.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0 0 12.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 0 0 5.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 0 0-3.48-8.413z"/>
+            </svg>
+        </a>
+        <a class="social-icon ig" href="https://instagram.com/" target="_blank" rel="noopener noreferrer" aria-label="Seguinos en Instagram" title="Instagram">
+            <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- ═══════════ LIGHTBOX ═══════════ -->
+    <div id="lightbox" role="dialog" aria-modal="true" aria-label="Vista de la pieza">
+        <div class="lightbox-inner">
+            <button type="button" class="lightbox-close" id="lbClose" aria-label="Cerrar">✕</button>
+            <div class="lightbox-top">
+                <span class="work-tag" id="lbTag"></span>
+                <h3 id="lbTitle"></h3>
+            </div>
+            <div class="lightbox-img">
+                <img id="lbImg" alt="">
+            </div>
+            <div class="lightbox-bottom">
+                <p id="lbPrice"></p>
+                <p id="lbSize"></p>
+                <p id="lbDesc"></p>
+                <a id="lbWa" class="lb-wa-btn" href="#" target="_blank" rel="noopener noreferrer">Pedir por WhatsApp</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ ADMIN ═══════════ -->
+    <div id="adminOverlay">
+        <div class="login-card" id="loginCard">
+            <h3>Acceso</h3>
+            <p>Panel privado MILIMARS</p>
+            <div class="login-error" id="loginError" role="status" aria-live="polite"></div>
+            <form id="loginForm">
+                <div class="field">
+                    <label for="loginUser">Usuario</label>
+                    <input type="text" id="loginUser" autocomplete="username" spellcheck="false">
+                </div>
+                <div class="field">
+                    <label for="loginPass">Contraseña</label>
+                    <input type="password" id="loginPass" autocomplete="current-password">
+                </div>
+                <div class="form-actions">
+                    <button type="submit" class="btn-save">Entrar</button>
+                    <button type="button" id="loginCancel" class="btn-cancel">Cancelar</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="admin-panel" id="adminPanel" style="display:none">
+            <div class="admin-head">
+                <div>
+                    <h3>Administración</h3>
+                    <small>Precio, imágenes del proceso, piezas del catálogo.</small>
+                </div>
+                <div class="admin-head-actions">
+                    <button type="button" id="logoutBtn" class="btn-cancel">Salir</button>
+                    <button type="button" id="closePanelBtn" class="btn-save">Cerrar</button>
+                </div>
+            </div>
+
+            <div class="admin-status" id="adminStatus" role="status" aria-live="polite"></div>
+
+            <div class="admin-grid">
+                <div class="admin-form-card">
+                    <div class="admin-price-box">
+                        <label for="priceInput">Precio global (ARS)</label>
+                        <div class="admin-price-row">
+                            <input type="number" id="priceInput" min="0" step="500" inputmode="numeric">
+                            <button type="button" id="savePriceBtn" class="btn-save">Guardar</button>
+                        </div>
+                    </div>
+
+                    <div class="admin-flow-box">
+                        <label>Imágenes del proceso</label>
+                        <div class="admin-flow-grid">
+                            <label class="admin-flow-slot">
+                                <div class="admin-flow-thumb">
+                                    <img id="flowThumbImg1" alt="Boceto">
+                                </div>
+                                <span class="admin-flow-label">Boceto</span>
+                                <input type="file" id="flowFile1" accept="image/*" hidden>
+                            </label>
+                            <label class="admin-flow-slot">
+                                <div class="admin-flow-thumb">
+                                    <img id="flowThumbImg2" alt="Moldería">
+                                </div>
+                                <span class="admin-flow-label">Moldería</span>
+                                <input type="file" id="flowFile2" accept="image/*" hidden>
+                            </label>
+                            <label class="admin-flow-slot">
+                                <div class="admin-flow-thumb">
+                                    <img id="flowThumbImg3" alt="Estampa">
+                                </div>
+                                <span class="admin-flow-label">Estampa</span>
+                                <input type="file" id="flowFile3" accept="image/*" hidden>
+                            </label>
+                        </div>
+                    </div>
+
+                    <h4 id="formTitle">Agregar trabajo</h4>
+                    <form id="workForm" novalidate>
+                        <div class="field">
+                            <input type="file" id="wFile" accept="image/*" hidden>
+                            <label for="wFile" class="upload-btn" id="wUploadBtn">
+                                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l4.6 4.6-1.42 1.42L13 6.84V17h-2V6.84L8.82 9.02 7.4 7.6 12 3zM5 19h14v2H5z"/></svg>
+                                <span id="wUploadText">Subir imagen</span>
+                            </label>
+                            <small id="wFileStatus">JPG, PNG o WebP. Se ajusta automáticamente.</small>
+                            <div class="preview" id="wPreview">
+                                <img id="wPreviewImg" alt="Previsualización">
+                            </div>
+                        </div>
+
+                        <div class="field">
+                            <label for="wTitle">Título</label>
+                            <input type="text" id="wTitle" maxlength="60" required>
+                        </div>
+                        <div class="field">
+                            <label for="wDesc">Descripción</label>
+                            <input type="text" id="wDesc" maxlength="120">
+                        </div>
+                        <div class="field">
+                            <label for="wTag">Etiqueta</label>
+                            <input type="text" id="wTag" maxlength="16">
+                        </div>
+
+                        <div class="form-actions">
+                            <button type="submit" class="btn-save" id="saveBtn">Guardar</button>
+                            <button type="button" id="cancelEditBtn" class="btn-cancel" style="display:none">Cancelar edición</button>
+                        </div>
+                    </form>
+                </div>
+
+                <div>
+                    <div class="admin-list" id="adminList"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ═══════════ CONFIRM ═══════════ -->
+    <div id="confirmOverlay" role="dialog" aria-modal="true" aria-labelledby="confirmTitle">
+        <div class="confirm-card">
+            <div class="confirm-icon">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 3h6l1 2h4v2H4V5h4l1-2zm-3 6h12l-1 12H7L6 9z"/></svg>
+            </div>
+            <h3 class="confirm-title" id="confirmTitle">Eliminar</h3>
+            <p class="confirm-message" id="confirmMessage"></p>
+            <div class="confirm-actions">
+                <button type="button" id="confirmCancelBtn" class="confirm-btn confirm-btn-cancel">Cancelar</button>
+                <button type="button" id="confirmDeleteBtn" class="confirm-btn confirm-btn-danger">Eliminar</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Supabase client (CDN) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+<script>
+/* ══════════════════════════════════════════════════════════════════
+   MILIMARS — catálogo + panel + Supabase
+   Configurá SUPABASE_URL y SUPABASE_ANON_KEY abajo.
+   Si los dejás con "YOUR_", funciona con localStorage (para probar).
+   Admin: usuario ADMIN / clave 153045
+   ══════════════════════════════════════════════════════════════════ */
+(function () {
+    "use strict";
+
+    /* ═══════════ CONFIG ═══════════ */
+    const WA_NUMBER = "543462415932";
+    const ADMIN_USER = "ADMIN";
+    const ADMIN_PASS = "153045";
+
+    const DEFAULT_PRICE = 25000;
+    const SIZES = ["XS", "S", "M", "L", "XL"];
+
+    // ▼▼▼ ACÁ VA LO DE SUPABASE ▼▼▼
+    const SUPABASE_URL = "https://YOUR_PROJECT.supabase.co";
+    const SUPABASE_ANON_KEY = "YOUR_ANON_KEY";
+    const SUPABASE_TABLE = "milimars_content";
+    const SUPABASE_BUCKET = "";   // "" = dataURL en DB. "milimars" = Storage público.
+    // ▲▲▲ FIN SUPABASE ▲▲▲
+
+    const LS_KEY = "milimars_works_v2";
+    const PRICE_KEY = "milimars_price_v2";
+    const FLOW_KEY = "milimars_flow_v2";
+    const SESSION_KEY = "milimars_admin_session";
+    const DRAFT_KEY = "milimars_form_draft";
+    const MAX_IMG_WIDTH = 900;
+    const JPEG_QUALITY = 0.8;
+
+    const IMG = {
+        a: "https://imglink.cc/cdn/UoliTM1FCv.png",
+        b: "https://imglink.cc/i/rXOlcOR-P6",
+        c: "https://imglink.cc/cdn/3w21rP1wWE.png",
+        d: "https://imglink.cc/cdn/Vw66pw01zG.png"
+    };
+
+    const DEFAULT_FLOW = [IMG.a, IMG.b, IMG.c];
+
+    const DEFAULT_WORKS = [
+        { id: "w1", title: "Drop 01", desc: "Corte amplio · Algodón 100% · Unisex", tag: "NEW",  img: IMG.a },
+        { id: "w2", title: "Drop 02", desc: "Peso medio · Gráfica exclusiva · Base neutra", tag: "HOT", img: IMG.b },
+        { id: "w3", title: "Drop 03", desc: "Tela premium · Tiraje corto · Edición especial", tag: "LTD", img: IMG.c },
+        { id: "w4", title: "Drop 04", desc: "Signature series · Calce relajado · 2026", tag: "EPIC", img: IMG.d },
+        { id: "w5", title: "Drop 05", desc: "Corte amplio · Algodón 100% · Unisex", tag: "NEW",  img: IMG.a },
+        { id: "w6", title: "Drop 06", desc: "Peso medio · Gráfica exclusiva · Base neutra", tag: "HOT", img: IMG.b },
+        { id: "w7", title: "Drop 07", desc: "Tela premium · Tiraje corto · Edición especial", tag: "LTD", img: IMG.c },
+        { id: "w8", title: "Drop 08", desc: "Signature series · Calce relajado · 2026", tag: "EPIC", img: IMG.d }
+    ];
+
+    /* ═══════════ SUPABASE ═══════════ */
+    let sb = null;
+    const hasSupabase =
+        SUPABASE_URL && !/YOUR_/.test(SUPABASE_URL) &&
+        SUPABASE_ANON_KEY && !/YOUR_/.test(SUPABASE_ANON_KEY);
+
+    if (hasSupabase && window.supabase && window.supabase.createClient) {
+        try { sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY); }
+        catch (err) { console.warn("Supabase init error:", err); }
+    }
+
+    /* ═══════════ STATE ═══════════ */
+    let works = [];
+    let price = DEFAULT_PRICE;
+    let flowImages = DEFAULT_FLOW.slice();
+    let selectedSizes = {};
+    let editingId = null;
+    let currentImageData = "";
+    let confirmResolver = null;
+    let loginMsgTimer = null;
+    let adminStatusTimer = null;
+
+    /* ═══════════ UTILITIES ═══════════ */
+    const $ = (id) => document.getElementById(id);
+
+    function escapeHtml(value) {
+        return String(value == null ? "" : value).replace(/[&<>"']/g, function (m) {
+            return { "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[m];
+        });
+    }
+
+    function formatPrice(n) {
+        return "$" + Number(n || 0).toLocaleString("es-AR");
+    }
+
+    function waLink(text) {
+        return "https://wa.me/" + WA_NUMBER + "?text=" + encodeURIComponent(text);
+    }
+
+    function loginMsg(msg, type) {
+        const el = $("loginError");
+        el.textContent = msg;
+        el.className = "login-error show " + (type || "info");
+        clearTimeout(loginMsgTimer);
+        loginMsgTimer = setTimeout(clearLoginMsg, 4000);
+    }
+
+    function clearLoginMsg() {
+        const el = $("loginError");
+        el.className = "login-error";
+        el.textContent = "";
+        clearTimeout(loginMsgTimer);
+    }
+
+    function adminStatus(msg, type) {
+        const el = $("adminStatus");
+        el.textContent = msg;
+        el.className = "admin-status show " + (type || "info");
+        clearTimeout(adminStatusTimer);
+        adminStatusTimer = setTimeout(function () {
+            el.className = "admin-status";
+            el.textContent = "";
+        }, 3500);
+    }
+
+    /* ═══════════ DATA LAYER ═══════════ */
+    async function loadWorks() {
+        if (sb) {
+            try {
+                const { data, error } = await sb
+                    .from(SUPABASE_TABLE)
+                    .select("value")
+                    .eq("key", "works")
+                    .maybeSingle();
+                if (error) throw error;
+                if (data && Array.isArray(data.value) && data.value.length) return data.value;
+                const seed = JSON.parse(JSON.stringify(DEFAULT_WORKS));
+                await sb.from(SUPABASE_TABLE).upsert({ key: "works", value: seed });
+                return seed;
+            } catch (err) {
+                console.warn("Supabase loadWorks failed → localStorage", err);
+            }
+        }
+        try {
+            const raw = localStorage.getItem(LS_KEY);
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed) && parsed.length) return parsed;
+            }
+        } catch (err) { /* ignorar */ }
+        return JSON.parse(JSON.stringify(DEFAULT_WORKS));
+    }
+
+    async function persistWorks() {
+        if (sb) {
+            try {
+                const { error } = await sb
+                    .from(SUPABASE_TABLE)
+                    .upsert({ key: "works", value: works });
+                if (error) throw error;
+                return true;
+            } catch (err) {
+                adminStatus("Error guardando en Supabase: " + (err.message || err), "error");
+                return false;
+            }
+        }
+        try {
+            localStorage.setItem(LS_KEY, JSON.stringify(works));
+            return true;
+        } catch (err) {
+            adminStatus("No se pudo guardar: almacenamiento lleno", "error");
+            return false;
+        }
+    }
+
+    async function loadPrice() {
+        if (sb) {
+            try {
+                const { data, error } = await sb
+                    .from(SUPABASE_TABLE)
+                    .select("value")
+                    .eq("key", "price")
+                    .maybeSingle();
+                if (error) throw error;
+                if (data && typeof data.value === "number") return data.value;
+            } catch (err) {
+                console.warn("Supabase loadPrice failed → localStorage", err);
+            }
+        }
+        try {
+            const raw = localStorage.getItem(PRICE_KEY);
+            if (raw != null) {
+                const n = parseInt(raw, 10);
+                if (Number.isFinite(n) && n >= 0) return n;
+            }
+        } catch (err) { /* ignorar */ }
+        return DEFAULT_PRICE;
+    }
+
+    async function persistPrice() {
+        if (sb) {
+            try {
+                const { error } = await sb
+                    .from(SUPABASE_TABLE)
+                    .upsert({ key: "price", value: price });
+                if (error) throw error;
+                return true;
+            } catch (err) {
+                adminStatus("Error guardando precio: " + (err.message || err), "error");
+                return false;
+            }
+        }
+        try {
+            localStorage.setItem(PRICE_KEY, String(price));
+            return true;
+        } catch (err) {
+            adminStatus("No se pudo guardar el precio", "error");
+            return false;
+        }
+    }
+
+    async function loadFlow() {
+        if (sb) {
+            try {
+                const { data, error } = await sb
+                    .from(SUPABASE_TABLE)
+                    .select("value")
+                    .eq("key", "flow")
+                    .maybeSingle();
+                if (error) throw error;
+                if (data && Array.isArray(data.value) && data.value.length === 3) return data.value;
+                const seed = DEFAULT_FLOW.slice();
+                await sb.from(SUPABASE_TABLE).upsert({ key: "flow", value: seed });
+                return seed;
+            } catch (err) {
+                console.warn("Supabase loadFlow failed → localStorage", err);
+            }
+        }
+        try {
+            const raw = localStorage.getItem(FLOW_KEY);
+            if (raw) {
+                const parsed = JSON.parse(raw);
+                if (Array.isArray(parsed) && parsed.length === 3) return parsed;
+            }
+        } catch (err) { /* ignorar */ }
+        return DEFAULT_FLOW.slice();
+    }
+
+    async function persistFlow() {
+        if (sb) {
+            try {
+                const { error } = await sb
+                    .from(SUPABASE_TABLE)
+                    .upsert({ key: "flow", value: flowImages });
+                if (error) throw error;
+                return true;
+            } catch (err) {
+                adminStatus("Error guardando flow: " + (err.message || err), "error");
+                return false;
+            }
+        }
+        try {
+            localStorage.setItem(FLOW_KEY, JSON.stringify(flowImages));
+            return true;
+        } catch (err) {
+            adminStatus("No se pudo guardar el flow", "error");
+            return false;
+        }
+    }
+
+    async function uploadImageIfNeeded(dataUrl) {
+        if (!sb || !SUPABASE_BUCKET || !dataUrl || !dataUrl.startsWith("data:")) return dataUrl;
+        const res = await fetch(dataUrl);
+        const blob = await res.blob();
+        const path = "works/" + Date.now() + "-" + Math.random().toString(36).slice(2, 8) + ".jpg";
+        const { error } = await sb.storage
+            .from(SUPABASE_BUCKET)
+            .upload(path, blob, { contentType: "image/jpeg", upsert: false });
+        if (error) throw error;
+        const { data } = sb.storage.from(SUPABASE_BUCKET).getPublicUrl(path);
+        return data.publicUrl;
+    }
+
+    /* ═══════════ SESSION ═══════════ */
+    function isLoggedIn() {
+        try { return sessionStorage.getItem(SESSION_KEY) === "1"; }
+        catch (err) { return false; }
+    }
+    function setLoggedIn(v) {
+        try {
+            if (v) sessionStorage.setItem(SESSION_KEY, "1");
+            else sessionStorage.removeItem(SESSION_KEY);
+        } catch (err) { /* modo privado */ }
+    }
+
+    /* ═══════════ GALERÍA ═══════════ */
+    function renderWorks() {
+        const grid = $("worksGrid");
+
+        if (!works.length) {
+            grid.innerHTML = '<div class="works-empty">Todavía no hay piezas cargadas. Volvé pronto.</div>';
+            return;
+        }
+
+        grid.innerHTML = works.map(function (w) {
+            const title = escapeHtml(w.title);
+            const desc = escapeHtml(w.desc);
+            const tag = escapeHtml(w.tag);
+            const pid = escapeHtml(w.id);
+
+            if (!selectedSizes[w.id]) selectedSizes[w.id] = "M";
+
+            const sizeButtons = SIZES.map(function (sz) {
+                const active = selectedSizes[w.id] === sz ? " active" : "";
+                return '<button type="button" class="size-btn' + active + '" data-size="' + sz + '" data-pid="' + pid + '">' + sz + '</button>';
+            }).join("");
+
+            return '' +
+                '<article class="work-card" data-open="' + pid + '" tabindex="0" role="button" aria-label="Ver ' + title + '">' +
+                    '<div class="work-media">' +
+                        '<img src="' + escapeHtml(w.img) + '" alt="' + title + '" loading="lazy" decoding="async" ' +
+                        'onerror="this.style.display=\'none\';this.parentElement.classList.add(\'img-error\')">' +
+                        (tag ? '<span class="work-tag">' + tag + '</span>' : '') +
+                    '</div>' +
+                    '<div class="work-body">' +
+                        '<h3 class="work-title">' + title + '</h3>' +
+                        (desc ? '<p class="work-desc">' + desc + '</p>' : '') +
+                        '<div class="size-row" data-pid="' + pid + '">' + sizeButtons + '</div>' +
+                        '<div class="work-price">' + formatPrice(price) + '<span>ARS</span></div>' +
+                    '</div>' +
+                '</article>';
+        }).join("");
+
+        grid.querySelectorAll("[data-open]").forEach(function (card) {
+            card.addEventListener("click", function () {
+                openLightbox(card.getAttribute("data-open"));
+            });
+            card.addEventListener("keydown", function (ev) {
+                if (ev.key === "Enter" || ev.key === " " || ev.key === "Spacebar") {
+                    ev.preventDefault();
+                    openLightbox(card.getAttribute("data-open"));
+                }
+            });
+        });
+
+        grid.querySelectorAll(".size-btn").forEach(function (btn) {
+            btn.addEventListener("click", function (ev) {
+                ev.stopPropagation();
+                const pid = btn.getAttribute("data-pid");
+                const size = btn.getAttribute("data-size");
+                selectedSizes[pid] = size;
+                renderWorks();
+            });
+        });
+    }
+
+    /* ═══════════ FLOW ═══════════ */
+    function applyFlowImages() {
+        const img1 = $("flowImg1");
+        const img2 = $("flowImg2");
+        const img3 = $("flowImg3");
+        if (img1) img1.src = flowImages[0] || "";
+        if (img2) img2.src = flowImages[1] || "";
+        if (img3) img3.src = flowImages[2] || "";
+    }
+
+    function renderFlowAdmin() {
+        [0, 1, 2].forEach(function (i) {
+            const img = $("flowThumbImg" + (i + 1));
+            if (img) img.src = flowImages[i] || "";
+        });
+    }
+
+    async function handleFlowFileChange(index, file) {
+        if (!file) return;
+        adminStatus("Procesando imagen…", "info");
+        try {
+            let dataURL = await compressImage(file);
+            if (sb && SUPABASE_BUCKET) {
+                dataURL = await uploadImageIfNeeded(dataURL);
+            }
+            const snapshot = flowImages.slice();
+            flowImages[index] = dataURL;
+            const ok = await persistFlow();
+            if (!ok) {
+                flowImages = snapshot;
+                return;
+            }
+            renderFlowAdmin();
+            applyFlowImages();
+            adminStatus("Imagen actualizada", "success");
+        } catch (err) {
+            adminStatus(err && err.message ? err.message : "No se pudo procesar", "error");
+        }
+    }
+
+    /* ═══════════ LIGHTBOX ═══════════ */
+    function openLightbox(id) {
+        const work = works.filter(function (w) { return String(w.id) === String(id); })[0];
+        if (!work) return;
+        const size = selectedSizes[work.id] || "M";
+
+        $("lbImg").src = work.img || "";
+        $("lbImg").alt = work.title || "";
+        $("lbTitle").textContent = work.title || "";
+        $("lbDesc").textContent = work.desc || "";
+        $("lbPrice").textContent = formatPrice(price) + " ARS";
+        $("lbSize").textContent = "Talle seleccionado: " + size;
+
+        const tagEl = $("lbTag");
+        tagEl.textContent = work.tag || "";
+        tagEl.style.display = work.tag ? "" : "none";
+
+        $("lbWa").href = waLink(
+            'Hola MILIMARS, me interesa "' + (work.title || "") + '" talle ' + size +
+            ' (' + formatPrice(price) + '). ¿Está disponible?'
+        );
+
+        $("lightbox").classList.add("open");
+        document.body.style.overflow = "hidden";
+    }
+
+    function closeLightbox() {
+        $("lightbox").classList.remove("open");
+        document.body.style.overflow = "";
+    }
+
+    /* ═══════════ ADMIN — SESIÓN ═══════════ */
+    function openAdmin() {
+        $("adminOverlay").classList.add("open");
+        document.body.style.overflow = "hidden";
+        clearLoginMsg();
+        if (isLoggedIn()) showPanel();
+        else showLogin();
+    }
+
+    function closeAdmin() {
+        $("adminOverlay").classList.remove("open");
+        document.body.style.overflow = "";
+        $("loginForm").reset();
+        clearLoginMsg();
+    }
+
+    function showLogin() {
+        $("loginCard").style.display = "";
+        $("adminPanel").style.display = "none";
+        setTimeout(function () { $("loginUser").focus(); }, 50);
+    }
+
+    function showPanel() {
+        $("loginCard").style.display = "none";
+        $("adminPanel").style.display = "";
+        renderAdminList();
+        updatePriceInput();
+        renderFlowAdmin();
+
+        const draft = loadFormDraft();
+        if (draft && (draft.title || draft.desc || draft.tag || draft.img)) {
+            restoreDraft(draft);
+        } else {
+            resetForm();
+        }
+    }
+
+    function handleLogin(ev) {
+        ev.preventDefault();
+        const user = $("loginUser").value.trim().toUpperCase();
+        const pass = $("loginPass").value.trim();
+
+        if (user === ADMIN_USER && pass === ADMIN_PASS) {
+            setLoggedIn(true);
+            clearLoginMsg();
+            showPanel();
+            adminStatus("Bienvenido", "success");
+        } else {
+            loginMsg("Usuario o contraseña incorrectos", "error");
+            $("loginPass").value = "";
+            $("loginPass").focus();
+        }
+    }
+
+    function updatePriceInput() {
+        const el = $("priceInput");
+        if (el) el.value = price;
+    }
+
+    async function savePrice() {
+        const v = parseInt($("priceInput").value, 10);
+        if (!Number.isFinite(v) || v < 0) {
+            adminStatus("Precio inválido", "error");
+            return;
+        }
+        price = v;
+        if (await persistPrice()) {
+            adminStatus("Precio actualizado", "success");
+            renderWorks();
+        }
+    }
+
+    /* ═══════════ ADMIN — LISTA ═══════════ */
+    function renderAdminList() {
+        const list = $("adminList");
+
+        if (!works.length) {
+            list.innerHTML = '<p class="admin-empty">Sin trabajos cargados.</p>';
+            return;
+        }
+
+        list.innerHTML = works.map(function (w, i) {
+            const title = escapeHtml(w.title);
+            const tag = escapeHtml(w.tag);
+            const id = escapeHtml(w.id);
+            return '' +
+                '<div class="admin-item" data-id="' + id + '">' +
+                    '<div class="admin-thumb">' +
+                        '<img src="' + escapeHtml(w.img) + '" alt="" loading="lazy" onerror="this.style.display=\'none\'">' +
+                    '</div>' +
+                    '<div class="admin-item-info">' +
+                        '<strong>' + title + '</strong>' +
+                        (tag ? '<span>' + tag + '</span>' : '') +
+                    '</div>' +
+                    '<div class="admin-item-actions">' +
+                        '<button type="button" data-up="' + id + '" title="Subir"' + (i === 0 ? " disabled" : "") + '>↑</button>' +
+                        '<button type="button" data-down="' + id + '" title="Bajar"' + (i === works.length - 1 ? " disabled" : "") + '>↓</button>' +
+                        '<button type="button" class="btn-edit" data-edit="' + id + '">Editar</button>' +
+                        '<button type="button" class="btn-del" data-del="' + id + '" title="Eliminar">✕</button>' +
+                    '</div>' +
+                '</div>';
+        }).join("");
+
+        list.querySelectorAll("[data-up]").forEach(function (btn) {
+            btn.addEventListener("click", function () { moveWork(btn.getAttribute("data-up"), -1); });
+        });
+        list.querySelectorAll("[data-down]").forEach(function (btn) {
+            btn.addEventListener("click", function () { moveWork(btn.getAttribute("data-down"), 1); });
+        });
+        list.querySelectorAll("[data-edit]").forEach(function (btn) {
+            btn.addEventListener("click", function () {
+                const id = btn.getAttribute("data-edit");
+                const work = works.filter(function (w) { return String(w.id) === String(id); })[0];
+                if (work) loadIntoForm(work);
+            });
+        });
+        list.querySelectorAll("[data-del]").forEach(function (btn) {
+            btn.addEventListener("click", function () { deleteWork(btn.getAttribute("data-del")); });
+        });
+    }
+
+    /* ═══════════ FORMULARIO ═══════════ */
+    function resetForm() {
+        editingId = null;
+        currentImageData = "";
+
+        $("workForm").reset();
+        $("wFile").value = "";
+        $("formTitle").textContent = "Agregar trabajo";
+        $("saveBtn").textContent = "Guardar";
+        $("cancelEditBtn").style.display = "none";
+        $("wPreview").style.display = "none";
+        $("wPreviewImg").src = "";
+        $("wUploadBtn").classList.remove("has-image");
+        $("wUploadText").textContent = "Subir imagen";
+        $("wFileStatus").textContent = "JPG, PNG o WebP. Se ajusta automáticamente.";
+
+        clearFormDraft();
+    }
+
+    function loadIntoForm(w) {
+        editingId = w.id;
+        currentImageData = w.img || "";
+
+        $("wTitle").value = w.title || "";
+        $("wDesc").value = w.desc || "";
+        $("wTag").value = w.tag || "";
+        $("wFile").value = "";
+
+        if (currentImageData) {
+            $("wPreviewImg").src = currentImageData;
+            $("wPreview").style.display = "block";
+            $("wUploadBtn").classList.add("has-image");
+            $("wUploadText").textContent = "Cambiar imagen";
+            $("wFileStatus").textContent = "Imagen cargada ✓";
+        } else {
+            $("wPreview").style.display = "none";
+            $("wUploadBtn").classList.remove("has-image");
+            $("wUploadText").textContent = "Subir imagen";
+            $("wFileStatus").textContent = "JPG, PNG o WebP. Se ajusta automáticamente.";
+        }
+
+        $("formTitle").textContent = "Editar trabajo";
+        $("saveBtn").textContent = "Guardar cambios";
+        $("cancelEditBtn").style.display = "";
+
+        saveFormDraft();
+        $("workForm").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    async function saveWork(ev) {
+        ev.preventDefault();
+
+        const title = $("wTitle").value.trim();
+        const desc = $("wDesc").value.trim();
+        const tag = $("wTag").value.trim();
+
+        if (!title) {
+            adminStatus("El título es obligatorio", "error");
+            $("wTitle").focus();
+            return;
+        }
+        if (!currentImageData) {
+            adminStatus("Subí una imagen", "error");
+            return;
+        }
+
+        let img = currentImageData;
+        if (sb && SUPABASE_BUCKET && img.startsWith("data:")) {
+            try {
+                img = await uploadImageIfNeeded(img);
+            } catch (err) {
+                adminStatus("Error subiendo imagen: " + (err.message || err), "error");
+                return;
+            }
+        }
+
+        const snapshot = JSON.parse(JSON.stringify(works));
+        const wasEditing = !!editingId;
+
+        if (editingId) {
+            const work = works.filter(function (w) { return String(w.id) === String(editingId); })[0];
+            if (work) {
+                work.img = img;
+                work.title = title;
+                work.desc = desc;
+                work.tag = tag;
+            }
+        } else {
+            works.unshift({
+                id: "w" + Date.now().toString(36) + Math.random().toString(36).slice(2, 5),
+                img: img,
+                title: title,
+                desc: desc,
+                tag: tag
+            });
+        }
+
+        const ok = await persistWorks();
+        if (!ok) {
+            works = snapshot;
+            renderWorks();
+            renderAdminList();
+            return;
+        }
+
+        adminStatus(wasEditing ? "Trabajo actualizado" : "Trabajo agregado", "success");
+        renderWorks();
+        renderAdminList();
+        resetForm();
+    }
+
+    /* ═══════════ REORDENAR / ELIMINAR ═══════════ */
+    async function moveWork(id, dir) {
+        const idx = works.findIndex(function (w) { return String(w.id) === String(id); });
+        if (idx === -1) return;
+        const target = idx + dir;
+        if (target < 0 || target >= works.length) return;
+
+        const snapshot = JSON.parse(JSON.stringify(works));
+        const tmp = works[idx];
+        works[idx] = works[target];
+        works[target] = tmp;
+
+        const ok = await persistWorks();
+        if (!ok) works = snapshot;
+        renderWorks();
+        renderAdminList();
+    }
+
+    async function deleteWork(id) {
+        const work = works.filter(function (w) { return String(w.id) === String(id); })[0];
+        if (!work) return;
+
+        const confirmed = await showConfirm({
+            title: "Eliminar trabajo",
+            message: '¿Eliminar <strong>"' + escapeHtml(work.title) + '"</strong>?<br>Esta acción no se puede deshacer.',
+            confirmText: "Eliminar",
+            cancelText: "Cancelar"
+        });
+        if (!confirmed) return;
+
+        const snapshot = JSON.parse(JSON.stringify(works));
+        works = works.filter(function (x) { return String(x.id) !== String(id); });
+        if (String(editingId) === String(id)) resetForm();
+
+        const ok = await persistWorks();
+        if (!ok) works = snapshot;
+        renderWorks();
+        renderAdminList();
+        if (ok) adminStatus("Trabajo eliminado", "success");
+    }
+
+    /* ═══════════ IMAGEN ═══════════ */
+    function compressImage(file) {
+        return new Promise(function (resolve, reject) {
+            if (!file || !/^image\//.test(file.type)) {
+                reject(new Error("El archivo no es una imagen válida"));
+                return;
+            }
+
+            const reader = new FileReader();
+
+            reader.onload = function (ev) {
+                const img = new Image();
+
+                img.onload = function () {
+                    let w = img.naturalWidth;
+                    let h = img.naturalHeight;
+                    if (!w || !h) {
+                        reject(new Error("No se pudo leer la imagen"));
+                        return;
+                    }
+                    if (w > MAX_IMG_WIDTH) {
+                        h = Math.round(h * MAX_IMG_WIDTH / w);
+                        w = MAX_IMG_WIDTH;
+                    }
+                    const canvas = document.createElement("canvas");
+                    canvas.width = w;
+                    canvas.height = h;
+                    const ctx = canvas.getContext("2d");
+                    ctx.fillStyle = "#000";
+                    ctx.fillRect(0, 0, w, h);
+                    ctx.drawImage(img, 0, 0, w, h);
+                    try {
+                        resolve(canvas.toDataURL("image/jpeg", JPEG_QUALITY));
+                    } catch (e) {
+                        reject(new Error("No se pudo procesar la imagen"));
+                    }
+                };
+
+                img.onerror = function () { reject(new Error("No se pudo leer la imagen")); };
+                img.src = ev.target.result;
+            };
+
+            reader.onerror = function () { reject(new Error("No se pudo leer el archivo")); };
+            reader.readAsDataURL(file);
+        });
+    }
+
+    function handleFileChange(ev) {
+        const file = ev.target.files && ev.target.files[0];
+        if (!file) return;
+
+        adminStatus("Procesando imagen…", "info");
+
+        compressImage(file).then(function (dataURL) {
+            currentImageData = dataURL;
+            $("wPreviewImg").src = dataURL;
+            $("wPreview").style.display = "block";
+            $("wUploadBtn").classList.add("has-image");
+            $("wUploadText").textContent = "Cambiar imagen";
+            $("wFileStatus").textContent = "Imagen cargada ✓";
+            saveFormDraft();
+            adminStatus("Imagen lista", "success");
+        }).catch(function (err) {
+            adminStatus(err && err.message ? err.message : "No se pudo procesar la imagen", "error");
+        });
+    }
+
+    /* ═══════════ BORRADOR ═══════════ */
+    function saveFormDraft() {
+        try {
+            localStorage.setItem(DRAFT_KEY, JSON.stringify({
+                editingId: editingId,
+                title: $("wTitle").value,
+                desc: $("wDesc").value,
+                tag: $("wTag").value,
+                img: currentImageData
+            }));
+        } catch (err) { /* silencioso */ }
+    }
+
+    function loadFormDraft() {
+        try {
+            const raw = localStorage.getItem(DRAFT_KEY);
+            return raw ? JSON.parse(raw) : null;
+        } catch (err) {
+            return null;
+        }
+    }
+
+    function clearFormDraft() {
+        try { localStorage.removeItem(DRAFT_KEY); }
+        catch (err) { /* silencioso */ }
+    }
+
+    function restoreDraft(draft) {
+        editingId = draft.editingId || null;
+        if (editingId && !works.some(function (w) { return String(w.id) === String(editingId); })) {
+            editingId = null;
+        }
+        $("wTitle").value = draft.title || "";
+        $("wDesc").value = draft.desc || "";
+        $("wTag").value = draft.tag || "";
+        currentImageData = draft.img || "";
+        $("wFile").value = "";
+
+        if (currentImageData) {
+            $("wPreviewImg").src = currentImageData;
+            $("wPreview").style.display = "block";
+            $("wUploadBtn").classList.add("has-image");
+            $("wUploadText").textContent = "Cambiar imagen";
+            $("wFileStatus").textContent = "Imagen cargada ✓";
+        } else {
+            $("wPreview").style.display = "none";
+            $("wPreviewImg").src = "";
+            $("wUploadBtn").classList.remove("has-image");
+            $("wUploadText").textContent = "Subir imagen";
+            $("wFileStatus").textContent = "JPG, PNG o WebP. Se ajusta automáticamente.";
+        }
+
+        $("formTitle").textContent = editingId ? "Editar trabajo" : "Agregar trabajo";
+        $("saveBtn").textContent = editingId ? "Guardar cambios" : "Guardar";
+        $("cancelEditBtn").style.display = editingId ? "" : "none";
+    }
+
+    /* ═══════════ CONFIRM (Promise) ═══════════ */
+    function showConfirm(opts) {
+        return new Promise(function (resolve) {
+            $("confirmTitle").textContent = opts.title || "Confirmar";
+            $("confirmMessage").innerHTML = opts.message || "";
+            $("confirmDeleteBtn").textContent = opts.confirmText || "Confirmar";
+            $("confirmCancelBtn").textContent = opts.cancelText || "Cancelar";
+            $("confirmOverlay").classList.add("open");
+            confirmResolver = resolve;
+            setTimeout(function () { $("confirmCancelBtn").focus(); }, 50);
+        });
+    }
+
+    function closeConfirm(result) {
+        $("confirmOverlay").classList.remove("open");
+        if (confirmResolver) {
+            const r = confirmResolver;
+            confirmResolver = null;
+            r(result);
+        }
+    }
+
+    /* ═══════════ REVEAL ═══════════ */
+    function initReveal() {
+        const els = document.querySelectorAll(".reveal");
+        if (!("IntersectionObserver" in window)) {
+            els.forEach(function (el) { el.classList.add("in"); });
+            return;
+        }
+        const io = new IntersectionObserver(function (entries) {
+            entries.forEach(function (entry) {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("in");
+                    io.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.12, rootMargin: "0px 0px -60px 0px" });
+        els.forEach(function (el) { io.observe(el); });
+    }
+
+    /* ═══════════ EVENTOS ═══════════ */
+    function bindEvents() {
+        $("year").textContent = new Date().getFullYear();
+
+        $("lbClose").addEventListener("click", closeLightbox);
+        $("lightbox").addEventListener("click", function (ev) {
+            if (ev.target === $("lightbox")) closeLightbox();
+        });
+
+        $("adminTrigger").addEventListener("click", openAdmin);
+        $("loginForm").addEventListener("submit", handleLogin);
+        $("loginCancel").addEventListener("click", closeAdmin);
+
+        $("logoutBtn").addEventListener("click", function () {
+            setLoggedIn(false);
+            showLogin();
+            loginMsg("Sesión cerrada", "info");
+        });
+        $("closePanelBtn").addEventListener("click", closeAdmin);
+
+        $("workForm").addEventListener("submit", saveWork);
+        $("wFile").addEventListener("change", handleFileChange);
+        $("cancelEditBtn").addEventListener("click", resetForm);
+
+        $("savePriceBtn").addEventListener("click", savePrice);
+        $("priceInput").addEventListener("keydown", function (ev) {
+            if (ev.key === "Enter") { ev.preventDefault(); savePrice(); }
+        });
+
+        // Flow image uploads
+        [1, 2, 3].forEach(function (n, i) {
+            const input = $("flowFile" + n);
+            if (!input) return;
+            input.addEventListener("change", function (ev) {
+                const file = ev.target.files && ev.target.files[0];
+                handleFlowFileChange(i, file);
+                ev.target.value = "";
+            });
+        });
+
+        $("confirmCancelBtn").addEventListener("click", function () { closeConfirm(false); });
+        $("confirmDeleteBtn").addEventListener("click", function () { closeConfirm(true); });
+        $("confirmOverlay").addEventListener("click", function (ev) {
+            if (ev.target === $("confirmOverlay")) closeConfirm(false);
+        });
+
+        ["wTitle", "wDesc", "wTag"].forEach(function (id) {
+            $(id).addEventListener("input", saveFormDraft);
+        });
+
+        document.addEventListener("keydown", function (ev) {
+            if (ev.key === "Escape") {
+                if ($("confirmOverlay").classList.contains("open")) closeConfirm(false);
+                else if ($("lightbox").classList.contains("open")) closeLightbox();
+                else if ($("adminOverlay").classList.contains("open")) closeAdmin();
+                return;
+            }
+            if (ev.ctrlKey && ev.shiftKey && (ev.key === "A" || ev.key === "a")) {
+                ev.preventDefault();
+                openAdmin();
+            }
+        });
+    }
+
+    /* ═══════════ INIT ═══════════ */
+    async function init() {
+        works = await loadWorks();
+        price = await loadPrice();
+        flowImages = await loadFlow();
+
+        works.forEach(function (w) {
+            if (!selectedSizes[w.id]) selectedSizes[w.id] = "M";
+        });
+
+        bindEvents();
+        renderWorks();
+        applyFlowImages();
+        renderFlowAdmin();
+        initReveal();
+        updatePriceInput();
+
+        if (isLoggedIn()) renderAdminList();
+    }
+
+    if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+    } else {
+        init();
+    }
+})();
+</script>
+</body>
+</html>
