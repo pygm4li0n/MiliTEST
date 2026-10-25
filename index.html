@@ -1439,13 +1439,7 @@
                     opacity 0.15s ease;
         will-change: transform, width, height;
     }
-    .mm-cursor.is-active { opacity: 1; }
-    .mm-cursor.is-hover {
-        width: 44px;
-        height: 44px;
-        background: rgba(57, 255, 20, 0.15);
-        box-shadow: 0 0 24px var(--accent-glow), inset 0 0 10px rgba(57, 255, 20, 0.4);
-    }
+       .mm-cursor.is-active { opacity: 1; }
 
     @media (hover: none) and (pointer: coarse) {
         body, body * { cursor: auto !important; }
@@ -2855,14 +2849,7 @@
     var mouseY = window.innerHeight / 2;
     var cursorX = mouseX;
     var cursorY = mouseY;
-    var lerp = 0.18;   // 0.1 = más suave/lento · 0.3 = más pegajoso
-
-    // Elementos que agrandan el cursor al pasar por encima
-    var hoverSel = 'a, button, input, label, .work-card, .size-btn, ' +
-                   '.step, .flow-step, .flow-step-placeholder, ' +
-                   '.social-icon, .admin-trigger, .upload-btn, ' +
-                   '.btn-save, .btn-cancel, .btn-primary, .btn-ghost, ' +
-                   '.lb-wa-btn, .admin-flow-slot';
+    var lerp = 0.18;
 
     document.addEventListener('mousemove', function (e) {
         mouseX = e.clientX;
@@ -2875,22 +2862,9 @@
     document.addEventListener('mouseleave', function () {
         cursor.classList.remove('is-active');
     });
+
     document.addEventListener('mouseenter', function () {
         cursor.classList.add('is-active');
-    });
-
-    document.addEventListener('mouseover', function (e) {
-        if (e.target.closest && e.target.closest(hoverSel)) {
-            cursor.classList.add('is-hover');
-        }
-    });
-    document.addEventListener('mouseout', function (e) {
-        if (e.target.closest && e.target.closest(hoverSel)) {
-            var to = e.relatedTarget;
-            if (!to || !to.closest || !to.closest(hoverSel)) {
-                cursor.classList.remove('is-hover');
-            }
-        }
     });
 
     function animate() {
