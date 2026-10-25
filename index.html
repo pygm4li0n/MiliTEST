@@ -1406,9 +1406,23 @@
         .admin-form-card { padding: 14px; }
         .admin-thumb { width: 44px; height: 44px; }
     }
+
+    /* ═══════════ AMBIENT FX (particles) ═══════════ */
+    .mm-fx-particles {
+        position: fixed;
+        inset: 0;
+        z-index: 1;
+        pointer-events: none;
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
 </style>
 </head>
-<body>    
+<body>
+    <!-- MILIMARS ambient FX: particles only -->
+    <canvas class="mm-fx-particles" id="mm-fx-particles" aria-hidden="true"></canvas>
+
    <section class="hero">
         <div class="hero-brand">
             <img class="hero-logo" src="https://i.postimg.cc/0NDfVdP5/Chat-GPT-Image-21-may-2026-01-53-38-(1).png" alt="MILIMARS" width="460" height="180" loading="eager" decoding="async">
@@ -2716,6 +2730,84 @@
     } else {
         init();
     }
+})();
+</script>
+
+<!-- ═══════════ AMBIENT FX: particles only ═══════════ -->
+<script>
+(function () {
+  'use strict';
+
+  var canvas = document.getElementById('mm-fx-particles');
+  if (!canvas) return;
+
+  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var ctx = canvas.getContext('2d');
+  var W = 0, H = 0;
+  var particles = [];
+  var COLOR = '57, 255, 20';   // rgb triplet — keep in sync with --accent
+
+  function seed() {
+    var count = Math.min(80, Math.round((W * H) / 28000));
+    particles = [];
+    for (var i = 0; i < count; i++) {
+      particles.push({
+        x: Math.random() * W,
+        y: Math.random() * H,
+        r: Math.random() * 1.8 + 0.5,
+        vx: (Math.random() - 0.5) * 0.3,
+        vy: (Math.random() - 0.5) * 0.3,
+        o: Math.random() * 0.5 + 0.2
+      });
+    }
+  }
+
+  function resize() {
+    var dpr = window.devicePixelRatio || 1;
+    W = window.innerWidth;
+    H = window.innerHeight;
+    canvas.width  = W * dpr;
+    canvas.height = H * dpr;
+    canvas.style.width  = W + 'px';
+    canvas.style.height = H + 'px';
+    ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+    seed();
+    if (reduceMotion) drawStatic();
+  }
+
+  function drawStatic() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < particles.length; i++) paint(particles[i]);
+  }
+
+  function paint(p) {
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(' + COLOR + ', ' + p.o + ')';
+    ctx.shadowColor = 'rgba(' + COLOR + ', 0.8)';
+    ctx.shadowBlur = 8;
+    ctx.fill();
+  }
+
+  function draw() {
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < particles.length; i++) {
+      var p = particles[i];
+      p.x += p.vx;
+      p.y += p.vy;
+      if (p.x < -10) p.x = W + 10;
+      if (p.x > W + 10) p.x = -10;
+      if (p.y < -10) p.y = H + 10;
+      if (p.y > H + 10) p.y = -10;
+      paint(p);
+    }
+    requestAnimationFrame(draw);
+  }
+
+  window.addEventListener('resize', resize);
+  resize();
+  if (!reduceMotion) requestAnimationFrame(draw);
 })();
 </script>
 </body>
