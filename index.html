@@ -1405,7 +1405,7 @@
         .admin-thumb { width: 44px; height: 44px; }
     }
 
-    /* ═══════════ AMBIENT FX (particles) ═══════════ */
+     /* ═══════════ AMBIENT FX (particles) ═══════════ */
     .mm-fx-particles {
         position: fixed;
         inset: 0;
@@ -1415,11 +1415,50 @@
         height: 100%;
         display: block;
     }
+
+    /* ═══════════ CUSTOM CURSOR ═══════════ */
+    body, body * { cursor: none !important; }
+
+    .mm-cursor {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 16px;
+        height: 16px;
+        border: 2px solid var(--accent);
+        border-radius: 50%;
+        pointer-events: none;
+        z-index: 9999;
+        background: transparent;
+        box-shadow: 0 0 10px var(--accent-glow), inset 0 0 4px rgba(57, 255, 20, 0.3);
+        opacity: 0;
+        transition: width 0.22s cubic-bezier(0.22, 0.61, 0.36, 1),
+                    height 0.22s cubic-bezier(0.22, 0.61, 0.36, 1),
+                    background 0.22s ease,
+                    box-shadow 0.22s ease,
+                    opacity 0.15s ease;
+        will-change: transform, width, height;
+    }
+    .mm-cursor.is-active { opacity: 1; }
+    .mm-cursor.is-hover {
+        width: 44px;
+        height: 44px;
+        background: rgba(57, 255, 20, 0.15);
+        box-shadow: 0 0 24px var(--accent-glow), inset 0 0 10px rgba(57, 255, 20, 0.4);
+    }
+
+    @media (hover: none) and (pointer: coarse) {
+        body, body * { cursor: auto !important; }
+        .mm-cursor { display: none !important; }
+    }
 </style>
 </head>
 <body>
     <!-- MILIMARS ambient FX: particles only -->
     <canvas class="mm-fx-particles" id="mm-fx-particles" aria-hidden="true"></canvas>
+
+    <!-- CUSTOM CURSOR -->
+    <div class="mm-cursor" id="mm-cursor" aria-hidden="true"></div>
 
    <section class="hero">
         <div class="hero-brand">
@@ -2798,6 +2837,70 @@
   window.addEventListener('resize', resize);
   resize();
   if (!reduceMotion) requestAnimationFrame(draw);
+})();
+</script>
+
+<!-- ═══════════ CUSTOM CURSOR ═══════════ -->
+<script>
+(function () {
+    'use strict';
+
+    var cursor = document.getElementById('mm-cursor');
+    if (!cursor) return;
+
+    // No activar en touch devices
+    if (window.matchMedia('(hover: none) and (pointer: coarse)').matches) return;
+
+    var mouseX = window.innerWidth / 2;
+    var mouseY = window.innerHeight / 2;
+    var cursorX = mouseX;
+    var cursorY = mouseY;
+    var lerp = 0.18;   // 0.1 = más suave/lento · 0.3 = más pegajoso
+
+    // Elementos que agrandan el cursor al pasar por encima
+    var hoverSel = 'a, button, input, label, .work-card, .size-btn, ' +
+                   '.step, .flow-step, .flow-step-placeholder, ' +
+                   '.social-icon, .admin-trigger, .upload-btn, ' +
+                   '.btn-save, .btn-cancel, .btn-primary, .btn-ghost, ' +
+                   '.lb-wa-btn, .admin-flow-slot';
+
+    document.addEventListener('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        if (!cursor.classList.contains('is-active')) {
+            cursor.classList.add('is-active');
+        }
+    });
+
+    document.addEventListener('mouseleave', function () {
+        cursor.classList.remove('is-active');
+    });
+    document.addEventListener('mouseenter', function () {
+        cursor.classList.add('is-active');
+    });
+
+    document.addEventListener('mouseover', function (e) {
+        if (e.target.closest && e.target.closest(hoverSel)) {
+            cursor.classList.add('is-hover');
+        }
+    });
+    document.addEventListener('mouseout', function (e) {
+        if (e.target.closest && e.target.closest(hoverSel)) {
+            var to = e.relatedTarget;
+            if (!to || !to.closest || !to.closest(hoverSel)) {
+                cursor.classList.remove('is-hover');
+            }
+        }
+    });
+
+    function animate() {
+        cursorX += (mouseX - cursorX) * lerp;
+        cursorY += (mouseY - cursorY) * lerp;
+        cursor.style.transform =
+            'translate3d(' + cursorX + 'px, ' + cursorY + 'px, 0) translate(-50%, -50%)';
+        requestAnimationFrame(animate);
+    }
+    animate();
 })();
 </script>
 </body>
