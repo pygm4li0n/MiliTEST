@@ -302,7 +302,7 @@
     .marquee-track {
         display: flex;
         width: max-content;
-        animation: marqueeScroll 52s linear infinite;
+        animation: marqueeScroll 42s linear infinite;
         will-change: transform;
     }
     .marquee:hover .marquee-track { animation-play-state: paused; }
@@ -1342,10 +1342,8 @@
         transform: translateY(0);
     }
     @media (prefers-reduced-motion: reduce) {
-        .reveal { opacity: 1; transform: none; transition: none; }
-        .marquee-track { animation: none; }
-        .flow-connector span, .admin-dot, .hero-logo { animation: none; }
-    }
+    .reveal { opacity: 1; transform: none; transition: none; }
+}
 
     /* ═══════════ RESPONSIVE ═══════════ */
     @media (max-width: 900px) {
@@ -2741,7 +2739,7 @@
   var canvas = document.getElementById('mm-fx-particles');
   if (!canvas) return;
 
-  var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var reduceMotion = false; // forzamos animación
 
   var ctx = canvas.getContext('2d');
   var W = 0, H = 0;
